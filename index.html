@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 Camera</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 90%;
+        display: block;
+        border: 1px solid #ccc;
+        min-height: 100px;
+        margin: auto;
+    }
+
+    input {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+    }
+</style>
+
+<body>
+
+    <img id="imgShow" src="" alt="">
+    <input id="upload" accept="image/*" type="file">
+</body>
+<script src="https://cdn.bootcss.com/exif-js/2.3.0/exif.min.js"></script>
+<script src="./dist/html5_camera.min.js"></script>
+<script>
+    var loader = new ImageUploader({
+        inputEl: '#upload',
+        showEl: '#imgShow',
+        isCompress: true,
+        isDev: true
+    }, (blob) => {
+        console.log(blob)
+    });
+</script>
+
+</html>
